@@ -28,11 +28,11 @@ class App extends React.Component {
         const country = e.target.elements.country.value;
         // Creating const to store value from "Form" component 
 
-        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
+        const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
         const data = await api_call.json();      // converts api call to JSON format
 
         // If city and country is entered correctly as value render code bellow
-        if (data.cod == 404) {
+        if (data.cod === 404) {
             this.setState({
                 temperature: undefined,
                 city: undefined,
@@ -72,7 +72,7 @@ class App extends React.Component {
                 <div className="wrapper">
                     <div className="main">
                         <div className="container">
-                            <div className="row">
+                            <div className="row omot">
 
                                 <div className="col-xs-5 title-container">
                                     <Titles />
